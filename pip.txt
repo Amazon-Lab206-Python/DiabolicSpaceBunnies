@@ -1,0 +1,80 @@
+pip is a recursive acronym that can stand for either "Pip Installs Packages" or "Pip Installs Python".
+
+
+pip install Django: installs Django library
+pip list:
+ccadenc@PHX115CG71217KQ MINGW64 ~/Desktop (master)
+$ pip list: What versions I have installed
+DEPRECATION: The default format will switch to columns in the future. You can use --format=(legacy|columns) (or define a format=(legacy|columns) in your pip.conf under the [list] section) to disable this warning.
+click (6.7)
+Django (1.11.6)
+Flask (0.12.2)
+itsdangerous (0.24)
+Jinja2 (2.9.6)
+MarkupSafe (1.0)
+pip (9.0.1)
+pytz (2017.2)
+setuptools (28.8.0)
+Werkzeug (0.12.2)
+
+pip install Django : already up to date
+pip freeze: freezes the version you have right now.
+
+$ pip freeze
+click==6.7
+Django==1.11.6
+Flask==0.12.2
+itsdangerous==0.24
+Jinja2==2.9.6
+MarkupSafe==1.0
+pytz==2017.2
+Werkzeug==0.12.2
+
+different between freeze and list: 
+Freeze has == in it (comparision)
+cd ~/Desktop -- directs to desktop
+
+pip freeze> requirments.txt
+What do I see when I ls?
+$ ls
+'~$ Returns Launch Doc.docx'
+'~$1 2018 ideas.docx'
+'~$Copy of Jin IIDP Microsite V4 CHC.xlsx'
+'~$Copy of Propensity to Contact Model Deep Dive 7-19-17 CHC PHX Edition.xlsx'
+'~$IIDP_MRG_TST_1.03_PS.xlsx'
+'~$Merge WF Initial Review.xlsx'
+'~$Top 20 L3 Cases YTD - Template V2 PHX.xlsx'
+'~WRL0005.tmp'
+"bunny's exam 1.JPG"
+ desktop.ini
+ DojoAssignments/
+'GIT commit, push.JPG'
+'git message.JPG'
+'internet img.JPG'
+'Lab 206 Daily Cadence - Sheet1.pdf'
+'Lab206 Pre Course Questionairre ccadenc.docx'
+'ninja bunny.jpg'
+'pip list.txt'
+ Reference.docx
+ requirements.txt
+ Slack.lnk*
+ test/
+ WebFundamentals/
+'week 40'/
+ Zoom.lnk*
+
+Whats inside this file?
+Everything I have on my desktop.
+also, piplist.txt
+
+
+pip uninstall Django: sows a long list of uninstalled things.
+then crashed 3 times.
+
+pip show Django-- does not respond (first time) (second time: command not found)ppip
+
+Googled: pres Y and enter to proceed
+
+pip search Flask
+--A very long list of flask related items 
+Zolenmeyer (0.1)                               - Stupid personally customized Fla    
