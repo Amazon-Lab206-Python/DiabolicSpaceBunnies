@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hi Bunny</title>
+</head>
+
+<body>
+    <h1>this is a test... its only a test of the bunny's greeting abilities</h1>
+    <h3>My flaks template with embedded Python-like code</h3>
+    <p>Phrase:{{phrase}}</p>
+    <p>times: {{times}}</p>
+    {%for x in range(0,times):%}
+    <p>{{phrase}}</p>
+    {% endfor %} {% if phrase == "hi bunny"%}
+    <p>the phrase says hi bunny</p>
+    {% endif %}
+    <a href="/users">back to users</a>
+
+</body>
+
+</html>
