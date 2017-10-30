@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- linking an image -->
+    <title>Ninja Colors</title>
+</head>
+
+<body>
+    <h1> find out more about the ninja turtles -- who's who?</h1>
+    {% if ninja_color == "blue" %}
+    <img src="{{ url_for('static', filename='leonardo.jpg') }}">
+    <p> Meet leonardo</p>
+    {% elif ninja_color== "red" %}
+    <img src="{{ url_for('static', filename='raphael.jpg')}}">
+    <p>meet raphael
+    </p>
+    {% elif ninja_color== "orange" %}
+    <img src="{{ url_for('static', filename='michelangelo.jpg')}}">
+    <p>meet michelangelo
+    </p>
+    {% elif ninja_color== "purple" %}
+    <img src="{{ url_for('static', filename='donatello.jpg')}}">
+    <p>meet donatello</p>
+    {% else %}
+    <img src="{{ url_for('static', filename='notapril.jpg') }}">
+    <p>Hey, that's not a ninja color! You have inputted {{ninja_color}}</p>
+    {% endif %}
+</body>
+
+</html>
