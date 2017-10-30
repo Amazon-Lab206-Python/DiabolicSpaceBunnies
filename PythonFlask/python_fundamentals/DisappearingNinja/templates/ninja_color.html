@@ -11,19 +11,16 @@
 
 <body>
     <h1> find out more about the ninja turtles -- who's who?</h1>
-    {% if ninja_color == "blue" %}
-    <img src="{{ url_for('static', filename='leonardo.jpg') }}">
+    {% if ninja_color == "blue" or ninja_color == "red" or ninja_color == "orange" or ninja_color == "purple"%}
+    <img src="{{ url_for('static', filename=(ninja_color +'.jpg')) }}"> {% endif %} {% if ninja_color == "blue" %}
     <p> Meet leonardo</p>
     {% elif ninja_color== "red" %}
-    <img src="{{ url_for('static', filename='raphael.jpg')}}">
     <p>meet raphael
     </p>
     {% elif ninja_color== "orange" %}
-    <img src="{{ url_for('static', filename='michelangelo.jpg')}}">
     <p>meet michelangelo
     </p>
     {% elif ninja_color== "purple" %}
-    <img src="{{ url_for('static', filename='donatello.jpg')}}">
     <p>meet donatello</p>
     {% else %}
     <img src="{{ url_for('static', filename='notapril.jpg') }}">
