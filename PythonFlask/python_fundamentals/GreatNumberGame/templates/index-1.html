@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter result</title>
+</head>
+
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <h2>I am thinking of a number between 1 and 100 Take a guess!
+    </h2>
+    <form>
+        Submit a number
+        <input type='number' name='guess'>
+        <input type='submit' name='submit'>
+    </form>
+    <pre>
+    {% if status != 'not_started' %} 
+        {% if status == 'correct' %} print "Yay, you have guessed correctly, you win 1000,000 USD!!""
+        {% elif status == 'too_high' %} 
+            print "You guessed too high, try again" 
+        {% else %} 
+            print "You guessed too low, try again"
+        {% endif %} 
+    {% endif %}
+    </pre>
+</body>
+
+</html>
