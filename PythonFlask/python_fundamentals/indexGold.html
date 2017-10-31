@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter result</title>
+</head>
+
+<body>
+    <h1>Welcome to the Ninja Gold digging game!</h1>
+    <h2>You are an an adventure to the farm, cave, house, and casino. You may lose money at the casino.
+    </h2>
+    <h2>Your money: {{session['money']}}</h2>
+    <form>
+        <form id="farm" form action="/process_money" method="post">
+            <input type="hidden" name="building" value="farm" />
+            <input type="submit" value="Find Gold!" />
+        </form>
+    </form>
+
+</body>
+
+</html>

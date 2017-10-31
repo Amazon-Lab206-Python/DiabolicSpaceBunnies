@@ -5,7 +5,7 @@ import random
 app.secret_key = 'ThisisSecret'
 
 
-@app.route('/info', methods=["POST"]
+@app.route('/index', methods=["POST"]
 def info():
    session['form_data']=request.form
     print session['counter']
