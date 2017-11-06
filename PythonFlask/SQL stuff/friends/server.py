@@ -15,4 +15,5 @@ def create():
     return redirect('/')
 
 
+print mysql.query_db("SELECT * FROM friends")
 app.run(debug=True)

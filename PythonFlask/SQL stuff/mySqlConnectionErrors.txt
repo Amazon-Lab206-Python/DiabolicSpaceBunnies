@@ -1,0 +1,14 @@
+changed database to notDb:
+NameError: global name 'notDb' is not defined
+
+changed port to wrong one
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+
+changed password to no
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root'@'localhost' (using password: YES)")
+
+chaned host to google.com
+seems to be running without an error but did not return results
+
+changed username to user
+sqlalchemy.exc.OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'user'@'localhost' (using password: YES)")
