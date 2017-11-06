@@ -1,0 +1,54 @@
+1.
+select country.name, countrylanguage.Language, countrylanguage.Percentage
+from countrylanguage
+inner join country on country.code = countrylanguage.countrycode
+where language like 'Slovene'
+order by Percentage desc;
+
+2.
+select country.name, count(city.name) as cities
+from city
+join country
+on country.code = city.countryCode
+group by country.name
+order by count(city.name) desc
+
+3.
+select city.name, city.population from country
+join city on 
+city.countryCode = country.Code
+where country.name like 'Mexico'
+and city.population > 500000
+order by city.population desc
+
+4.
+select country.name, countrylanguage.Language, countryLanguage.percentage from countrylanguage
+join country on countrylanguage.countryCode = country.code
+where countrylanguage.percentage > 89
+order by percentage desc
+
+5.
+select name, SurfaceArea, population from country
+where SurfaceArea < 501
+and population > 100000
+
+6.
+select name, GovernmentForm, capital, LifeExpectancy from country
+where GovernmentForm like 'Constitutional Monarchy'
+and capital > 200
+and LifeExpectancy > 75
+
+7. 
+select city.name, country.name, city.district, city.population from city
+join country on 
+city.countryCode = country.Code
+where country.name like "Argentina"
+and city.District like "Buenos Aires"
+and city.Population > 500000
+
+8.
+select region, count(*) as countries 
+from country
+group by region
+order by count(*) desc
+

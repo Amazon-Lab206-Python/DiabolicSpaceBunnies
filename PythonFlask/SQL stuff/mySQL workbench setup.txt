@@ -1,0 +1,19 @@
+My SQL Workbench Setup
+
+-- use [twitter]
+SELECT * FROM users;
+INSERT INTO faves (fav_animal, fav_food)
+values(rabbt, potato);
+	#	Time	Action	Message	Duration / Fetch
+0	1	11:34:29	use [user_dashboard] select * from users	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[user_dashboard] select * from users' at line 1	0.000 sec
+0	2	11:35:26	use [user_dashboard] select * from users	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[user_dashboard] select * from users' at line 1	0.000 sec
+0	3	11:35:43	use [twitter] select * from users	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[twitter] select * from users' at line 1	0.000 sec
+3	4	11:46:57	SELECT * FROM users LIMIT 0, 1000	5 row(s) returned	0.000 sec / 0.000 sec
+3	5	11:49:42	SELECT * FROM users LIMIT 0, 1000	5 row(s) returned	0.000 sec / 0.000 sec
+0	6	11:49:42	INSERT INTO users (fav_animal, fav_food)	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1	0.000 sec
+3	7	11:50:32	SELECT * FROM users LIMIT 0, 1000	5 row(s) returned	0.000 sec / 0.000 sec
+0	8	11:50:32	INSERT INTO users (fav_animal, fav_food) values(rabbt, potato)	Error Code: 1054. Unknown column 'fav_animal' in 'field list'	0.000 sec
+3	9	11:51:01	SELECT * FROM users LIMIT 0, 1000	5 row(s) returned	0.000 sec / 0.000 sec
+0	10	11:51:01	INSERT INTO faves (fav_animal, fav_food) values(rabbt, potato)	Error Code: 1054. Unknown column 'fav_animal' in 'field list'	0.000 sec
+3	11	11:51:22	SELECT * FROM users LIMIT 0, 1000	5 row(s) returned	0.000 sec / 0.000 sec
+0	12	11:51:22	INSERT INTO faves (fav_animal, fav_food) values(rabbt, potato)	Error Code: 1054. Unknown column 'fav_animal' in 'field list'	0.000 sec

@@ -1,0 +1,20 @@
+from flask import Flask
+# import the Connector function
+from mysqlconnection import MySQLConnector
+app = Flask(__name__)
+# connect and store the connection in "mysql" note that you pass the database name to the function
+mysql = MySQLConnector(app, 'mydb')
+# an example of running a query
+print mysql.query_db("SELECT * FROM mydb")
+
+
+@app.route('/')
+def index():
+    query = 'SELECT * FROM mydb'
+    name = mysql.query_db(query)
+    print name
+
+    return render_template('index.html', name=name)
+
+
+app.run(debug=True)
