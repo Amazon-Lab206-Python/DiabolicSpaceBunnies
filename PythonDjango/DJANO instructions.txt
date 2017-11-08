@@ -1,0 +1,75 @@
+1. create virtual environment
+> python -m virtualenv djangoEnv
+> call djangoEnv/scripts/activate
+(djangoEnv)>pip install django
+
+2. create django project
+ > django-admin startproject main
+
+2.1 Navigate into the main directory that you just created. 
+"python manage.py runserver"
+
+ > cd main
+  # Make a new apps directory
+  > mkdir apps
+  # Navigate into apps
+  > cd apps
+
+ create an __init__.py file.
+# PCs: (Command Prompt)
+  > nul> __init__.py
+
+manage.py file was automatically created-- call it!
+> python ../manage.py startapp first_app  #created a new app
+
+in settings.py, add "apps.first_app" to INSTALLED_APPS list.
+
+nav to main folder
+python manage.py runserver from the terminal
+proceed to localhost: 8000
+
+~*~*~* url*~*~*~*~
+1. main/urls.py
+
+  from django.conf.urls import url, include # Notice we added include
+  from django.contrib import admin
+  urlpatterns = [
+      url(r'^', include('apps.first_app.urls')) # And now we use the include function to pull in our first_app.urls...
+  ]
+
+2. make urls file.
+> cd apps/first_app
+>nul> urls.py
+
+ from django.conf.urls import url
+  from . import views           # This line is new!
+  urlpatterns = [
+    url(r'^$', views.index)     # This line has changed!
+  ]
+
+3. VIEWS
+apps/first_app/views.py
+
+  from django.shortcuts import render, HttpResponse, redirect
+  # the index function is called when root is visited
+  def index(request):
+    response = "Hello, I am your first request!"
+    return HttpResponse(response)
+
+Here is a cheat sheet for expressions you'll be using regularly:
+
+'^' Matches the following characters at the beginning of a string. Example: '^a' matches 'anna' but not 'banana'.
+'$' Matches the previous characters at the end of a string. Example: 'a$' matches 'anna' and 'banana' but not 'fan'.
+'[]' Matches any value in a range. Example: '[0-9]' matches '9' and '9s'.
+'{n}' Matches n number or more repetitions of the preceding pattern. Example: '[0-9]{2}' matches '91' and '9834' but not '9'
+\d Matches digits.  Example: "\d" matches "8" and "877x"
+\d+ matches a string with one or more digits
+\w Matches characters.
+\w+ matches a string with one or more character/word
+
+Examples of Regular Expression
+url(r'^articles/(?P\d+)$', views.show)
+url(r'^articles/(?P\w+)$', views.show_word)
+url(r'^articles/2003/$', views.special_case_2003)
+url(r'^articles/(?P[0-9]{4})$', views.year_archive)
+url(r'^articles/(?P[0-9]{4})/(?P[0-9]{2}$', views.month_archive)
