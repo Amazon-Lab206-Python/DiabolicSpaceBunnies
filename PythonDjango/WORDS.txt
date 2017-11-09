@@ -1,0 +1,99 @@
+words
+requimrents
+form that is going to work with session.
+session as a word storage area, loop through it
+will not involve DB
+How to organize data being submitted on form in a nice neat way.
+copy and paste date time.
+
+list, list of dictionaries?
+
+How should we start?
+[
+{
+"word": "Bunny", --> from form
+"color": "green", --> these are from the form
+"big": True (boolean)
+"date": ---
+}
+multiple entries of the above keys
+"word": "Bunny", --> from form
+"color": "green", --> these are from the form
+"big": True (boolean)
+"date": ---
+]
+
+
+words
+	index.html
+under form, {% csrf_token %}
+input type="radio"
+input type= "checkbox" name= "big" # when checkbox is not checked, key word does not get built.
+input type="submit" value "add to session"
+
+urls
+url(r'^
+
+then views.py
+def add (request):
+	if request.method== "POST":
+		print request.POST
+		if request.POST:
+			big=True
+		else:
+			big=False
+			time=datetime.datetime.now().strftime('%I:%M:%s, %Y')
+		word_builder = {
+			'word':request.POST['word'],
+			'color': request.POST['color'],
+			'big': big,
+			'date':datetime.datetime.now()
+}
+request.session['words'].append(word_builder)
+return redirect('/session_words')
+~*~*~*~*~*Throw the dictionary into sessions*~*~*~*~
+start session started at the beginning right below def index (request)
+dictionary held in list.
+views.py
+def index(request):
+	try:
+		request.session['words']
+	except:
+		request.session['words'] = []
+
+app url 'session_words' stick it in there!
+
+index
+<div class="one-half column"> # ripped from getskeleton
+{{ request.session.words'}}
+</div>
+
+	request.session['words'] = [] # will empty list every time refreshed
+	return render(request, 'words/index.html')
+
+request.session.modified=True
+
+also, must be JSON serializable.
+
+loop through the dictionary
+index
+{%load static%}
+{% static 'words/style.css' %}
+
+{% for word in request.session.words %}
+<p class="{{word.color}}{word.big}}"> {{word.word}} added on {{word.date}}</p>
+{% endfor %}
+
+static folder
+words folder
+style.css
+
+.True {
+	font-size: 50px;
+}
+
+.Flase{
+	font-size: 20px;
+}
+
+or grab temp, slap it back into session.
