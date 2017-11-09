@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Random Word</h2>
+    <br>
+    <div class="line">{{attempt}}</div>
+    <div class="line">{{rando}}</div>
+    <form action="surveys/process" method="post">
+        <input type="text" value="name">
+        <select name="location">
+            <option value="PHX">PHX</option>
+            <option value="SEA">SEA</option>
+        </select>
+        <select name="language">
+            <option value="Python">Python</option>
+            <option value="Javascript">Javascript</option>
+        </select>
+        <input type="submit" value="generate"> Generate
+        <input type="text" value="comment">
+    </form>
+</body>
+
+</html>
