@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    Amadon Store!
+    <table>
+        <tr>Item</tr>
+        <td>bunny's thingamajig</td>
+        <tr>Price
+            <td> 10.50
+            </td>
+        </tr>
+        <tr>Actions</tr>
+        <td>
+            <form action='/amadon/buy' method='post'>
+                {% csrf_token %}
+                <select name='quantity'>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+                <input type='hidden' name='product_id' value='1015' />
+                <input type='submit' value='Buy!' />
+            </form>
+        </td>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+Blog.objects.create(name="Star Wars Blog", desc="Everything about Star Wars") # creates a new blog record
+conditions
+Admin.objects.filter(first_name__startswith="S") - filters objects with first_name that starts with "S"
+Helpful tip
+In regard to the default display when printing objects, we could create __str__ or __repr__ method in the class to handle how they want the objects to print. This is pretty handy and shows how we can leverage some of python's magic methods to make our lives easier.
+class Blog(models.Model):
+    name = models.CharField(max_length=255)
+    desc = models.TextField()
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now = True)
+    def __repr__(self):
+        return "<Blog object: {} {}>".format(self.name, self.desc)
+iPython - nicer looking shell
+Also, if you would like, you could also install ipython (pip install ipython).  This replaces the default shell with a much nicer one (TAB indent works, line numbers, syntax highlighting, etc).
+
+
+blog.objects.create(name='awef', desc='awer"
+b.save() --> creates new record in the db.
+
+b.name="Choi's Blog"
+b.save()
+
+filter, exclude, order by, raw {"(SELECT * FROM)"} -> use raw when you can
