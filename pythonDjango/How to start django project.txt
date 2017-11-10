@@ -21,7 +21,7 @@ Then enter in Visual Studio:
 
 from django.conf.urls import url, include
 urlpatterns=[
-	url(r'^'), include ('apps.~*app_name*~.urls'))
+	url(r'^'), include (apps.~*app_name*~.urls'))
 
 step 6: make micro urls file under ~*app_name*~
 Use cmd prompt
@@ -42,19 +42,7 @@ apps/~*app_name*~/views.py
 
 In Visual Studio:
 
-from django.shortcuts import render, HttpResponse, redirect
-
-step 8: models
-class User(models.Model):
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
-    age = models.IntegerField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.email
+from django.shortcuts import redner, HttpResponse, redirect
 def index(request)
 	response="Hi, I'm a bunny, and this is a request!"
 	return HttpResponse(response)
@@ -64,3 +52,27 @@ create folder "templates" under your folder *~app_name*~
 include index.html under that templates folder
 Folder structure
 *~app_name*~ > templates > index.html
+
+step 9: sessions
+cmd
+python manage.py makemigrations
+>python manage.py migrate
+
+step 10: migratins/models
+from __future__ import unicode_literals
+
+from django.db import models
+
+# Create your models here.
+
+
+class User(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    age = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def ___str___(self):
+        return self.email
