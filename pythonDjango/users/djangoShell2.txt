@@ -1,0 +1,86 @@
+C:\Users\ccadenc\Desktop\pythonstuff\PythonDjango\users>
+C:\Users\ccadenc\Desktop\pythonstuff\PythonDjango\users>python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.user_login.models import User
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+ImportError: No module named user_login.models
+>>> from apps.users_app.models import User
+>>>  User.objects.create(first_name="Michael", last_name="Jordan", email="mike@jumpman.com", age=23)
+  File "<console>", line 1
+    User.objects.create(first_name="Michael", last_name="Jordan", email="mike@jumpman.com", age=23)
+    ^
+IndentationError: unexpected indent
+>>> User.objects.create(first_name="Michael", last_name="Jordan", email="mike@jumpman.com", age=2
+... User.objects.create(first_name="Michael", last_name="Jordan", email="mike@jumpman.com", age=23)
+  File "<console>", line 2
+    User.objects.create(first_name="Michael", last_name="Jordan", email="mike@jumpman.com", age=23)
+       ^
+SyntaxError: invalid syntax
+>>> User.objects.create(first_name="Michael", last_name="Jordan", email="mike@jumpman.com", age=23)
+<User: User object>
+>>> User.objects.create(first_name="Larry", last_name="Bird", email="celtics rule!!!", age=23)
+<User: User object>
+>>>
+>>> User.objects.first()
+<User: User object>
+>>> User.objects.first().first_name
+u'Michael'
+>>> User.objects.all().order_by("last_name")
+<QuerySet [<User: User object>, <User: User object>]>
+>>> User.objects.all().order_by("last_name")
+<QuerySet [<User: User object>, <User: User object>]>
+>>> from apps.users_app.models import User
+>>> User.objects.all().order_by("last_name")
+<QuerySet [<User: User object>, <User: User object>]>
+>>> exit()
+
+C:\Users\ccadenc\Desktop\pythonstuff\PythonDjango\users>
+C:\Users\ccadenc\Desktop\pythonstuff\PythonDjango\users>python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import User
+>>> User.objects.all().order_by("last_name")
+<QuerySet [<User: celtics rule!!!>, <User: mike@jumpman.com>]>
+>>> exit()
+
+C:\Users\ccadenc\Desktop\pythonstuff\PythonDjango\users>python manage.py shell
+Python 2.7.13 (v2.7.13:a06454b1afa1, Dec 17 2016, 20:53:40) [MSC v.1500 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.users_app.models import User
+>>> User.objects.all().order_by("last_name")
+<QuerySet [<User: Larry Bird>, <User: Michael Jordan>]>
+>>> User.objects.all().order_by("-last_name")
+<QuerySet [<User: Michael Jordan>, <User: Larry Bird>]>
+>>> User.objects.last()
+<User: Larry Bird>
+>>> user2 = User.objects.get(id=2)
+>>> user2.email
+u'celtics rule!!!'
+>>> user2.last_name="Brown"
+>>> user2.save()
+>>> user2
+<User: Larry Brown>
+>>> user1
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user1' is not defined
+>>> user1=User.objects.get(id=1)
+>>> user1
+<User: Michael Jordan>
+>>> user2
+<User: Larry Brown>
+>>> User.objects.get(id=2).delete()
+(1, {u'users_app.User': 1})
+>>> user.objects.all()
+Traceback (most recent call last):
+  File "<console>", line 1, in <module>
+NameError: name 'user' is not defined
+>>> User.objects.all()
+<QuerySet [<User: Michael Jordan>]>
+>>>
+
