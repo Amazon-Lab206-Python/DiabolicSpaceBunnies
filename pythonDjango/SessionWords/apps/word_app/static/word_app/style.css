@@ -1,0 +1,25 @@
+.green {
+    color: green
+}
+
+.blue {
+    color: blue
+}
+
+.red {
+    color: red
+}
+
+.isBigTextTrue {
+    font-size: 200%;
+}
+
+.rightside {
+    width: 45%;
+    display: inline-block;
+}
+
+.leftside {
+    width: 45%;
+    display: inline-block;
+}

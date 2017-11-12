@@ -1,5 +1,7 @@
-from django.conf.urls improt url, include
+from django.conf.urls import url, include
 from . import views
-url patterns = [
-    url(r'^$', views.index)
+urlpatterns = [
+    url(r'^session_words/$', views.index),
+    url(r'^session_words/add_word$', views.add),
+    url(r'^session_words/clear$', views.clear)
 ]

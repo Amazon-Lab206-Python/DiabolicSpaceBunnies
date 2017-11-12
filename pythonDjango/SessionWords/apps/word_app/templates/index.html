@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <pre>
+        {% load static %}
+    </pre>
+    <link rel="stylesheet" type="text/css" href="{% static 'word_app/style.css' %}" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class='leftside'>
+
+        <h3>Add a new word</h3>
+        <form action="add_word" method="post">
+            {% csrf_token %}
+            <input type="text" name="new_word">
+
+
+            <p>Choose color</p>
+
+            <input type="radio" name="color" value="red" checked="checked"> red
+            <br>
+            <input type="radio" name="color" value="blue"> blue
+            <br>
+            <input type="radio" name="color" value="green"> green
+            <br>
+
+            <input type="checkbox" name="bigText" value="true"> Show in Big Text!
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div class='rightside'>
+
+
+        <form action="clear" method="post">
+            {% csrf_token %}
+            <input type="submit" value="clear_session">Clear Session
+        </form>
+        <!-- pre allows us to not auto-format -->
+        <pre> 
+            {% for w in words %} 
+                <div class = '{{w.color}} isBigText{{w.bigText}}'>
+                    {{ w.word }}
+                </div>
+            {% endfor %}
+        </pre>
+    </div>
+
+
+</body>
+
+</html>
