@@ -21,3 +21,5 @@ b.name="Choi's Blog"
 b.save()
 
 filter, exclude, order by, raw {"(SELECT * FROM)"} -> use raw when you can
+sqlite browser to visualize things better.
+nav to sqlite file on VS. 
