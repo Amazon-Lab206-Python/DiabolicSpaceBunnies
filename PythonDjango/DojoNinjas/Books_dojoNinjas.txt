@@ -1,0 +1,43 @@
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+from apps.book_authors.models import *
+
+Create 5 books with the following names: C sharp, Java, Python, PHP, Ruby
+
+Book.objects.create(name="C sharp", desc="not flat")
+Book.objects.create(name="Java", desc="not coffee")
+Book.objects.create(name="Python", desc="not a snake")
+Book.objects.create(name="PHP", desc="not a TLA")
+Book.objects.create(name="Ruby", desc="not an emerald")
+
+Create 5 different authors: Mike, Speros, John, Jadee, Jay
+Author.objects.create(first_name="Mike", last_name="ike", email="mike@ike.com")
+Author.objects.create(first_name="Speros", last_name="peros", email="speros@peros.com")
+Author.objects.create(first_name="John", last_name="ohn", email="john@ohn.com")
+Author.objects.create(first_name="Jadee", last_name="adee", email="jadee@adee.com")
+Author.objects.create(first_name="Jay", last_name="ay", email="jay@ay.com")
+
+Add a new field in the authors table called 'notes'.  Make this a TextField.  Successfully create and run the migration files.
+
+Adding column
+python manage.py makemigrations
+python manage.py migrate
+python manage.py shell
+from apps.book_authors.models import *
+
+Change the name of the 5th book to C#
+Book.objects.get(id=5)
+(saw Ruby as the book)
+book = Book.objects.get(id=5)
+book.name="C#"
+book.save()
+
+Change the first_name of the 5th author to Ketul
+author=Author.objects.get(id=5)
+author.first_name="Ketul"
+author.save()
+
+>>> Author.objects.get(id=5)
+<Author: name = Ketul ay>
+
