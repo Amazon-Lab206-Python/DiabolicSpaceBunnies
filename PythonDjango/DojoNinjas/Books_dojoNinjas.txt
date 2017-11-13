@@ -41,3 +41,60 @@ author.save()
 >>> Author.objects.get(id=5)
 <Author: name = Ketul ay>
 
+Assign the first author to the first 2 books
+Author.objects.get(id=1) or Author.objects.first()
+Book.objects.first() or Book.objects.all()[0]
+Book.objects.all()[1]
+
+author1 = Author.objects.first()
+book1 = Book.objects.first()
+book2 = Book.objects.all()[1]
+
+author1.books.add(book1)
+author1.books.add(book2)
+
+Assign the second author to the first 3 books
+
+author2 = Author.objects.all()[1]
+book3 = Book.objects.all()[2]
+
+author2.books.add(book1)
+author2.books.add(book2)
+author2.books.add(book3)
+
+Assign the third author to the first 4 books
+author3 = Author.objects.all()[2]
+book4 = Book.objects.all()[3]
+
+author3.books.add(book1)
+author3.books.add(book2)
+author3.books.add(book3)
+author3.books.add(book4)
+
+Assign the fourth author to the first 5 books (or in other words, all the books)
+author4 = Author.objects.all()[3]
+book5 = Book.objects.all()[4]
+
+author4.books.add(book1)
+author4.books.add(book2)
+author4.books.add(book3)
+author4.books.add(book4)
+author4.books.add(book5)
+
+For the 3rd book, retrieve all the authors
+book3.authors.all()
+Book.objects.all()[2].authors.all()
+Book.objects.get(id=3).authors.all()
+
+For the 3rd book, remove the first author
+to_be_deleted_author = book3.authors.first()
+to_be_deleted_author.delete()
+
+For the 2nd book, add the 5th author as one of the authors
+Book.objects.get(id=2).authors.add(Author.objects.get(id=5))
+
+Find all the books that the 3rd author is part of
+Author.objects.get(id=3).books.all()
+
+Find all the books that the 2nd author is part of
+Author.objects.get(id=2).books.all()
