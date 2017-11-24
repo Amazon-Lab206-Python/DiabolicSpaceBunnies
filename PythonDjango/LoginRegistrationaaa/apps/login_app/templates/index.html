@@ -10,16 +10,17 @@
 </head>
 
 <body>
-    {% with messages = get_flashed_messages() %} {% if messages %}
+    {% if messages %}
     <ul>
         {% for message in messages %}
         <li>{{ message }}</li>
         {% endfor %}
     </ul>
-    {% endif %} {% endwith %}
+    {% endif %}
     <div class="six columns">
         <h4>Register</h4>
         <form action="/register" method="post">
+            {% csrf_token %}
             <div class="row">
                 <div class="six columns">
                     <label for="first_name">First Name</label>
@@ -50,6 +51,7 @@
     <div class="six columns">
         <h4>Login</h4>
         <form action="/login" method="post">
+            {% csrf_token %}
             <div class="row">
                 <label for="email">Email Address</label>
                 <input class="u-full-width" type="text" id="email" name="email">
